@@ -1,4 +1,4 @@
-package Ch02.example;
+package Doit.Ch02.example;
 
 import java.util.Arrays;
 import java.util.Random;

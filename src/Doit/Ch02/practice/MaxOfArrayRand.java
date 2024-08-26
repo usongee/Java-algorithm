@@ -1,4 +1,4 @@
-package Ch02.practice;
+package Doit.Ch02.practice;
 
 import java.util.Random;
 import java.util.Scanner;

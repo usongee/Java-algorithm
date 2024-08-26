@@ -1,6 +1,5 @@
-package ch01;
+package Doit.Ch01;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class q10 {

@@ -1,4 +1,4 @@
-package Ch02.example;// 연습2-2
+package Doit.Ch02.example;// 연습2-2
 // 배열 요소에 값을 입력받아 역순으로 정렬합니다(과정을 출력)
 
 import java.util.Scanner;
