@@ -9,7 +9,7 @@ public class LottoMachine {
 
 
     //로또 번호 입력
-    public static int num() {
+    public static int[] num() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("로또 번호를 6개 입력하세요. ");
@@ -52,7 +52,7 @@ public class LottoMachine {
         Scanner scanner = new Scanner(System.in);
         int money = scanner.nextInt(); //금액 입력 (천원 이상, *000 단위)
 
-        return money;
+        return money/1000;
     }
 
     public static int playTime() {
@@ -64,21 +64,25 @@ public class LottoMachine {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("금액 입력(0은 빼고 입력) : " + money());
-        System.out.println("수동 횟수 입력(남은 횟수는 자동) : " + playTime());
+        System.out.println("금액 입력(천원 단위) : ");
+        int money = money();
+        System.out.println("수동 횟수 입력(남은 횟수는 자동) : ");
+        int playTime = playTime();
+        System.out.println("금액 : " + money + " / 수동 횟수 : " + playTime);
 
-        int[][] num = new int[money()][6];
+        int[][] num = new int[money][6];
 
         //수동
-        for(int i=0; i<playTime(); i++) {
+        for(int i=0; i<playTime; i++) {
+            System.out.println(i+"번째 게임입니다.");
             for(int j=0; j<6; j++) {
+                System.out.println(j+"번째 번호를 입력하세요.");
                 num[i][j] = scanner.nextInt();
             }
         }
         //자동
         Random random = new Random();
-
-        for(int i=playTime(); i<money()-playTime(); i++) {
+        for(int i=playTime; i<money; i++) {
             for(int j=0; j<6; j++) {
                 num[i][j] = random.nextInt(45)+1;
             }
